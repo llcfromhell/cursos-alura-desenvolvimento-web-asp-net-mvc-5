@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexViewBag</title>
+</head>
+<body>
+    <div>
+
+        <div>@ViewBag.msg</div>
+
+        <table>
+
+            <tr>
+                <th>
+                    Nome
+                </th>
+
+                <th>
+                    Preço
+                </th>
+
+                <th>
+                    Quantidade
+                </th>
+
+            </tr>
+
+            @foreach (var produto in ViewBag.produtos)
+            {
+
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Quantidade</td>
+                </tr>
+
+            }
+
+        </table>
+
+    </div>
+</body>
+</html>
