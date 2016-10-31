@@ -1,0 +1,66 @@
+﻿@model CaelumEstoque.Models.Produto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Visualiza</title>
+</head>
+<body>
+    <div>
+        <h4>Produto</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Preco)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Preco)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoriaId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CategoriaId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Quantidade)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
