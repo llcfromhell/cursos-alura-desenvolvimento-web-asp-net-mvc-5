@@ -53,6 +53,7 @@ namespace CaelumEstoque.Controllers
             return RedirectToAction("IndexViewBag");
         }
 
+        [Route("produtos", Name ="ListaProdutos")]
         public ActionResult IndexViewBag()
         {
 
@@ -62,6 +63,7 @@ namespace CaelumEstoque.Controllers
             return View(produtos);
         }
 
+        [Route("produtos/{id}", Name ="VisualizaProduto")]
         public ActionResult Visualiza(int id)
         {
             ProdutosDAO dao = new ProdutosDAO();

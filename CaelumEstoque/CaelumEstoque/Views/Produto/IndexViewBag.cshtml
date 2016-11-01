@@ -33,14 +33,15 @@
 
                 <tr>
                     <td>@produto.Id</td>
-                    <td>@Html.ActionLink(produto.Nome, "Visualiza", new { id = produto.Id })</td>
+                    @*@<td>@Html.ActionLink(produto.Nome, "Visualiza", enew { id = produto.Id })</td>*@
+                    <td>@Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id})</td>
                     <td>@produto.Quantidade</td>
-                </tr>
+                    </tr>
 
-            }
+                }
 
-        </table>
+            </table>
 
-    </div>  
-</body>
-</html>
+        </div>
+    </body>
+    </html>
