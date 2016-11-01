@@ -5,13 +5,25 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>IndexViewBag</title>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
 </head>
 <body>
-    <div>
 
-        <div>@ViewBag.msg</div>
+    <div class="row">@ViewBag.msg</div>
 
-        <table>
+    <div class="row">
+
+        <div class="btn-group">
+
+            @Html.ActionLink("Adicionar", "Form", "Produto", new { @class = "btn btn-default" })
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <table class="table table-hover table-striped">
 
             <tr>
                 <th>
@@ -34,14 +46,22 @@
                 <tr>
                     <td>@produto.Id</td>
                     @*@<td>@Html.ActionLink(produto.Nome, "Visualiza", enew { id = produto.Id })</td>*@
-                    <td>@Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id})</td>
-                    <td>@produto.Quantidade</td>
-                    </tr>
 
-                }
+                    <td>@Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })</td>
 
-            </table>
+                    <td>
+                        @produto.Quantidade
+                        |
+                        <a href="/Produto/DecrementaQtd/@produto.Id"> Diminuir </a>
+                    </td>
 
-        </div>
-    </body>
-    </html>
+                </tr>
+
+            }
+
+        </table>
+
+    </div>
+
+</body>
+</html>

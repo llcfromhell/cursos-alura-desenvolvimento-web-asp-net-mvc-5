@@ -1,9 +1,4 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
@@ -15,30 +10,30 @@
 
         <form action="/Produto/Adiciona" method="post">
             <label for="nome">Nome:</label>
-            <input id="nome" name="produto.Nome" value="@ViewBag.Produto.Nome" />
+            <input id="nome" class="form-control" name="produto.Nome" value="@ViewBag.Produto.Nome" />
             @Html.ValidationMessage("produto.Nome")
 
             <label for="preco">Preço:</label>
-            <input id="preco" name="produto.Preco" value="@ViewBag.Produto.Preco"  />
+            <input id="preco" class="form-control" name="produto.Preco" value="@ViewBag.Produto.Preco"  />
             @Html.ValidationMessage("produto.Preco")
 
             <label for="quantidade">Quantidade:</label>
-            <input id="quantidade" name="produto.Quantidade" value="@ViewBag.Produto.Quantidade"  />
+            <input id="quantidade" class="form-control" name="produto.Quantidade" value="@ViewBag.Produto.Quantidade"  />
             @Html.ValidationMessage("produto.Quantidade")
 
             <label for="descricao">Descrição:</label>
-            <input id="descricao" name="produto.Descricao" value="@ViewBag.Produto.Descricao"  />
+            <input id="descricao" class="form-control" name="produto.Descricao" value="@ViewBag.Produto.Descricao"  />
             @Html.ValidationMessage("produto.Descricao")
 
             <label for="categoria">Categoria:</label>
-            <select id="categoria" name="produto.CategoriaId">
+            <select id="categoria" class="form-control" name="produto.CategoriaId">
                 @foreach (var categoria in ViewBag.Categorias)
                 {
                     <option selected="@(categoria.Id==ViewBag.Produto.CategoriaId)" value="@categoria.Id">@categoria.Nome</option>
                 }
             </select>
             @Html.ValidationMessage("produto.CategoriaId")
-            <input type="submit" />
+            <input type="submit" class="btn btn-default" />
         </form>
 
     </div>
