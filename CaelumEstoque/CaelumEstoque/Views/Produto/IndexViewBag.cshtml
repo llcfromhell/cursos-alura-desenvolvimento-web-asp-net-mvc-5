@@ -38,21 +38,25 @@
                     Quantidade
                 </th>
 
+                <th></th>
+
             </tr>
 
             @foreach (var produto in Model)
             {
 
                 <tr>
+
                     <td>@produto.Id</td>
-                    @*@<td>@Html.ActionLink(produto.Nome, "Visualiza", enew { id = produto.Id })</td>*@
 
                     <td>@Html.RouteLink(produto.Nome, "VisualizaProduto", new { id = produto.Id })</td>
 
-                    <td>
+                    <td id="quantidade@(produto.Id)" class="fade in">
                         @produto.Quantidade
-                        |
-                        <a href="/Produto/DecrementaQtd/@produto.Id"> Diminuir </a>
+                    </td>
+
+                    <td>
+                        <a href="javascript:void(0);" onclick="decrementa(@produto.Id);"> Diminuir </a>
                     </td>
 
                 </tr>
@@ -62,6 +66,22 @@
         </table>
 
     </div>
+
+    <script type="text/javascript">
+
+        function decrementa(produtoId){
+            var url = "@Url.Action("DecrementaQtd", "Produto")";
+            var params = { id: produtoId };
+            $.post(url, params , atualiza);
+                
+        }
+
+        function atualiza(resposta){
+            var elemento = $("#quantidade" + resposta.Id);
+            elemento.html(resposta.Quantidade);
+        }
+
+    </script>
 
 </body>
 </html>
