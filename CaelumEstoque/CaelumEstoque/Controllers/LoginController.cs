@@ -13,16 +13,7 @@ namespace CaelumEstoque.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            object usuario = Session["usuarioLogado"];
-
-            if (usuario == null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToRoute("ListaProdutos");
-            }
+            return View();
         }
 
         public ActionResult Autenticar(string login, string senha)

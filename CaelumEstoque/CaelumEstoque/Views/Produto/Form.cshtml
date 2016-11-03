@@ -9,6 +9,9 @@
     <div> 
 
         <form action="/Produto/Adiciona" method="post">
+
+            @Html.AntiForgeryToken()
+
             <label for="nome">Nome:</label>
             <input id="nome" class="form-control" name="produto.Nome" value="@ViewBag.Produto.Nome" />
             @Html.ValidationMessage("produto.Nome")

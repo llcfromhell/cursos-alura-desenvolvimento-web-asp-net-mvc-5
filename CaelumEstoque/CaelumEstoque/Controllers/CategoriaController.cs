@@ -1,4 +1,5 @@
 ﻿using CaelumEstoque.DAO;
+using CaelumEstoque.Filters;
 using CaelumEstoque.Models;
 using System;
 using System.Collections.Generic;
